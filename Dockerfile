@@ -6,7 +6,7 @@ WORKDIR /app/front
 
 # Copy package configuration
 COPY front/package*.json ./
-RUN npm install
+RUN npm install --legacy-peer-deps
 
 # Copy frontend codebase and run compilation
 COPY front/ ./
