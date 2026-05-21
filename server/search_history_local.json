@@ -1,0 +1,128 @@
+[
+  {
+    "_id": "d23337fb-87c4-4d13-9248-1f2877c75079",
+    "user_id": "guest",
+    "raw_address": "경기도 수원시 팔달구 인계동 957번지",
+    "std_address": "경기도 수원시 팔달구 인계동 957번지 동부프라자",
+    "coords": {
+      "lat": 37.2739600273201,
+      "lon": 127.02818754294
+    },
+    "building_spec": {
+      "bld_nm": "동부프라자",
+      "tot_area": 8699.98,
+      "grnd_flr_ar": 60.0,
+      "use_aprv_day": "20180101",
+      "main_purps_cd_nm": "제1종근린생활시설"
+    },
+    "timestamp": "2026-05-21T20:29:37.237150+00:00"
+  },
+  {
+    "_id": "96391024-9ccc-4ff1-afec-21c83198607d",
+    "user_id": "guest",
+    "raw_address": "경기도 수원시 팔달구 인계동 957번지",
+    "std_address": "경기도 수원시 팔달구 인계동 957번지 동부프라자",
+    "coords": {
+      "lat": 37.2739600273201,
+      "lon": 127.02818754294
+    },
+    "building_spec": {
+      "bld_nm": "동부프라자",
+      "tot_area": 8699.98,
+      "grnd_flr_ar": 60.0,
+      "use_aprv_day": "20180101",
+      "main_purps_cd_nm": "제1종근린생활시설"
+    },
+    "timestamp": "2026-05-21T20:27:22.134617+00:00"
+  },
+  {
+    "_id": "78aeacf4-8cbf-45d2-9d8f-f8d5e825608f",
+    "user_id": "guest",
+    "raw_address": "경기도 수원시 팔달구 인계동 957번지",
+    "std_address": "경기도 수원시 팔달구 인계동 957번지 동부프라자",
+    "coords": {
+      "lat": 37.2739696608255,
+      "lon": 127.028219567712
+    },
+    "building_spec": {
+      "bld_nm": "동부프라자",
+      "tot_area": 8699.98,
+      "grnd_flr_ar": 60.0,
+      "use_aprv_day": "20180101",
+      "main_purps_cd_nm": "제1종근린생활시설"
+    },
+    "timestamp": "2026-05-21T20:15:23.528161+00:00"
+  },
+  {
+    "_id": "caa5fc7f-226a-4979-a6eb-2e478bb7a819",
+    "user_id": "guest",
+    "raw_address": "부산광역시 수영구 망미동 826-63번지",
+    "std_address": "부산광역시 수영구 망미동 826-63번지 (철근콘크리트구조)",
+    "coords": {
+      "lat": 35.1732421060385,
+      "lon": 129.101907004253
+    },
+    "building_spec": {
+      "bld_nm": "(철근콘크리트구조)",
+      "tot_area": 461.12,
+      "grnd_flr_ar": 60.0,
+      "use_aprv_day": "20180101",
+      "main_purps_cd_nm": "제2종근린생활시설"
+    },
+    "timestamp": "2026-05-21T20:02:58.582889+00:00"
+  },
+  {
+    "_id": "9f533bc6-fed9-4414-96ad-a1d5cc38650b",
+    "user_id": "guest",
+    "raw_address": "부산광역시 수영구 망미동 826-63번지",
+    "std_address": "부산광역시 수영구 망미동 826-63번지 (철근콘크리트구조)",
+    "coords": {
+      "lat": 35.1732421060385,
+      "lon": 129.101907004253
+    },
+    "building_spec": {
+      "bld_nm": "(철근콘크리트구조)",
+      "tot_area": 461.12,
+      "grnd_flr_ar": 60.0,
+      "use_aprv_day": "20180101",
+      "main_purps_cd_nm": "제2종근린생활시설"
+    },
+    "timestamp": "2026-05-21T13:41:59.262906+00:00"
+  },
+  {
+    "_id": "61de9f95-0270-4e58-942a-a1aa71ffc493",
+    "user_id": "guest",
+    "raw_address": "부산광역시 기장군 정관읍 모전리 768번지",
+    "std_address": "부산광역시 기장군 정관읍 모전리 768번지 정관신도시 휴먼시아2단지",
+    "coords": {
+      "lat": 35.3325667795984,
+      "lon": 129.163135942024
+    },
+    "building_spec": {
+      "bld_nm": "정관신도시 휴먼시아2단지",
+      "tot_area": 4521.66,
+      "grnd_flr_ar": 60.0,
+      "use_aprv_day": "20180101",
+      "main_purps_cd_nm": "공동주택"
+    },
+    "timestamp": "2026-05-21T13:40:58.514374+00:00"
+  },
+  {
+    "_id": "4bcbc414-2519-4265-8e00-253f67d10176",
+    "user_id": "guest",
+    "raw_address": "서울특별시 영등포구 여의도동 1번지",
+    "std_address": "서울특별시 영등포구 여의도동 1번지 국회 소통관",
+    "coords": {
+      "lat": 37.5310586079351,
+      "lon": 126.915381487445
+    },
+    "building_spec": {
+      "bld_nm": "국회 소통관",
+      "tot_area": 24732.58,
+      "grnd_flr_ar": 60.0,
+      "use_aprv_day": "20180101",
+      "main_purps_cd_nm": "업무시설"
+    },
+    "timestamp": "2026-05-21T13:32:53.467619+00:00"
+  }
+]
