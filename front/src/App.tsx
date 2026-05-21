@@ -34,19 +34,6 @@ import type {
 } from "./types";
 import MarkdownRenderer from "./components/MarkdownRenderer";
 
-const SUGGESTED_ADDRESSES = [
-  "서울시 영등포구 여의도동 1",
-  "서울 강남구 대치동 942-10",
-  "경기 성남시 분당구 정자동 10",
-  "부산 해운대구 우동 1400"
-];
-
-const MOCK_OWNER_LOOKUP: Record<string, string> = {
-  "서울시 영등포구 여의동로 123": "홍길동",
-  "서울 강남구 대치동 테헤란로 82길 15": "이몽룡",
-  "경기 성남시 분당구 정자일로 95": "성춘향",
-  "부산 해운대구 마린시티2로 33": "장보고"
-};
 
 export default function App() {
   const [timeline, setTimeline] = useState<TimelineItem[]>([]);
@@ -847,25 +834,7 @@ export default function App() {
                 </div>
               </div>
 
-              {/* Recommended Sample Addresses */}
-              <div className="mt-8 max-w-md mx-auto">
-                <p className="text-xs text-slate-400 font-bold mb-3">빠른 조회를 위한 예시 주소 선택</p>
-                <div className="flex flex-wrap gap-2 justify-center">
-                  {SUGGESTED_ADDRESSES.map((addr) => (
-                    <button
-                      key={addr}
-                      type="button"
-                      onClick={() => {
-                        setAddressInput(addr);
-                        startAvmFlow(addr);
-                      }}
-                      className="text-xs font-semibold text-slate-700 bg-white border border-slate-200 px-3.5 py-2.5 rounded-xl hover:bg-violet-50 hover:text-violet-600 hover:border-violet-200 transition-all shadow-sm"
-                    >
-                      {addr}
-                    </button>
-                  ))}
-                </div>
-              </div>
+
             </div>
           ) : (
             /* TIMELINE STREAM OF CARDS */
@@ -1039,14 +1008,8 @@ export default function App() {
                 if (card.type === "auth_request") {
                   const isApproved = currentStage !== "AUTH_WAIT";
 
-                  // Extract registered owner hint based on countdown address or matched databases
+                  // Extract registered owner hint
                   let ownerHint = "홍길동";
-                  for (const key in MOCK_OWNER_LOOKUP) {
-                    if (key === countdownAddress) {
-                      ownerHint = MOCK_OWNER_LOOKUP[key];
-                      break;
-                    }
-                  }
 
                   return (
                     <div key={card.id} className="flex items-start gap-3 animate-fade-in-up">
