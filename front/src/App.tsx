@@ -43,6 +43,7 @@ export default function App() {
   const [isInputDisabled, setIsInputDisabled] = useState(false);
   const [currentStage, setCurrentStage] = useState<StageType>("ADDRESS_INPUT");
   const [llmEngineType, setLlmEngineType] = useState<"GEMINI" | "SLLM">("GEMINI");
+  const [reportModalHtml, setReportModalHtml] = useState<string | null>(null);
 
   // Autocomplete search states
   const [searchResults, setSearchResults] = useState<KakaoAddressItem[]>([]);
@@ -1310,10 +1311,8 @@ export default function App() {
                               <button
                                 type="button"
                                 onClick={() => {
-                                  const win = window.open("", "_blank", "width=920,height=950,scrollbars=yes,resizable=yes");
-                                  if (win) {
-                                    win.document.write(card.text || "");
-                                    win.document.close();
+                                  if (card.text) {
+                                    setReportModalHtml(card.text);
                                   }
                                 }}
                                 className="flex-1 bg-violet-600 hover:bg-violet-750 text-white font-bold text-xs py-2.5 px-4 rounded-xl flex items-center justify-center gap-1.5 shadow-md shadow-violet-100 hover:shadow-lg transition-all"
@@ -1550,6 +1549,65 @@ export default function App() {
           </div>
         </footer>
       </main>
+
+      {/* 3. REPORT VIEWER MODAL (F-UI-03 Modal fallback for iframe sandbox) */}
+      {reportModalHtml && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4" id="report-modal-backdrop">
+          <div className="bg-white rounded-3xl w-full max-w-5xl h-[90vh] flex flex-col shadow-2xl border border-slate-200 overflow-hidden">
+            
+            {/* Modal Header */}
+            <div className="flex items-center justify-between px-6 py-4 border-b border-slate-200 bg-slate-50 select-none">
+              <div className="flex items-center gap-2">
+                <div className="bg-violet-100 text-violet-700 p-2 rounded-xl">
+                  <FileText size={18} className="stroke-[2.5]" />
+                </div>
+                <div>
+                  <h3 className="font-extrabold text-sm sm:text-base text-slate-800 tracking-tight leading-none">
+                    AI 정밀 감정평가 보고서
+                  </h3>
+                  <p className="text-[10px] text-slate-400 mt-1 font-semibold">PREMIUM APPRAISAL REPORT PREVIEW</p>
+                </div>
+              </div>
+              
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={() => {
+                    const iframe = document.getElementById("report-iframe") as HTMLIFrameElement;
+                    if (iframe && iframe.contentWindow) {
+                      iframe.contentWindow.focus();
+                      iframe.contentWindow.print();
+                    }
+                  }}
+                  className="bg-violet-600 hover:bg-violet-750 text-white font-bold text-xs py-2 px-4 rounded-xl flex items-center gap-1.5 shadow-sm transition-all"
+                >
+                  <Download size={13} />
+                  인쇄 / PDF 저장
+                </button>
+                
+                <button
+                  type="button"
+                  onClick={() => setReportModalHtml(null)}
+                  className="bg-slate-100 hover:bg-slate-200 text-slate-600 font-bold text-xs py-2 px-3 rounded-xl transition-all"
+                >
+                  닫기
+                </button>
+              </div>
+            </div>
+            
+            {/* Modal Body: Secure Iframe Container */}
+            <div className="flex-1 bg-slate-100 relative">
+              <iframe
+                id="report-iframe"
+                srcDoc={reportModalHtml}
+                title="AI Appraisal Report"
+                className="w-full h-full border-0 bg-white"
+              />
+            </div>
+            
+          </div>
+        </div>
+      )}
     </div>
   );
 }
