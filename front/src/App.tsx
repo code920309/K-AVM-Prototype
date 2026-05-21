@@ -78,7 +78,7 @@ export default function App() {
     fetchHistory();
   }, []);
 
-  // Debounce search address input
+  // Real-time search address input (Instantly fetch without debounce delay)
   useEffect(() => {
     if (addressInput.trim().length < 2) {
       setSearchResults([]);
@@ -86,7 +86,7 @@ export default function App() {
       return;
     }
 
-    const delayDebounce = setTimeout(async () => {
+    const fetchSearch = async () => {
       try {
         const res = await fetch(`/api/v1/avm/search?q=${encodeURIComponent(addressInput)}`);
         if (res.ok) {
@@ -97,9 +97,9 @@ export default function App() {
       } catch (e) {
         console.error("Search failed", e);
       }
-    }, 300);
+    };
 
-    return () => clearTimeout(delayDebounce);
+    fetchSearch();
   }, [addressInput]);
 
   // Click outside to close search dropdown
