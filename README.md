@@ -1,3 +1,13 @@
+---
+title: K-AVM-Prototype
+emoji: 🏠
+colorFrom: violet
+colorTo: indigo
+sdk: docker
+app_port: 7860
+pinned: false
+---
+
 # 통합 AVM 및 금융 연계 플랫폼 (K-AVM-Prototype)
 
 ## 1. 배포 주소 (Deployment URL)
