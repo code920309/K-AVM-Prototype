@@ -1,7 +1,7 @@
 ---
 title: K-AVM-Prototype
 emoji: 🏠
-colorFrom: violet
+colorFrom: purple
 colorTo: indigo
 sdk: docker
 app_port: 7860
