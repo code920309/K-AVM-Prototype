@@ -42,7 +42,7 @@ export default function App() {
   const [chatInput, setChatInput] = useState("");
   const [isInputDisabled, setIsInputDisabled] = useState(false);
   const [currentStage, setCurrentStage] = useState<StageType>("ADDRESS_INPUT");
-  const [llmEngineType, setLlmEngineType] = useState<"GEMINI" | "SLLM">("GEMINI");
+  const llmEngineType = "GEMINI";
   const [reportModalHtml, setReportModalHtml] = useState<string | null>(null);
 
   // Autocomplete search states
