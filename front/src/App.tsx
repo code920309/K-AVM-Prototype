@@ -623,46 +623,7 @@ export default function App() {
           </div>
         </div>
 
-        {/* Engine switcher inside Sidebar */}
-        <div className="mb-6 bg-slate-50/70 rounded-2xl p-4 border border-slate-100">
-          <div className="flex items-center justify-between mb-3">
-            <label className="text-[11px] font-bold text-slate-500 uppercase tracking-widest flex items-center gap-1">
-              <Sparkles size={13} className="text-violet-600 animate-pulse" />
-              추론 엔진 제어
-            </label>
-            <span className="text-[9px] text-violet-600 font-bold bg-violet-50 px-1.5 py-0.5 rounded-full border border-violet-100 font-mono">
-              ACTIVE
-            </span>
-          </div>
 
-          <div className="grid grid-cols-2 gap-1 bg-white p-1 rounded-xl border border-slate-200">
-            <button
-              type="button"
-              onClick={() => setLlmEngineType("GEMINI")}
-              className={`text-xs py-2 font-semibold rounded-lg transition-all flex items-center justify-center gap-1 ${llmEngineType === "GEMINI"
-                ? "bg-violet-600 text-white shadow-sm"
-                : "text-slate-600 hover:bg-slate-50"
-                }`}
-            >
-              Gemini 3.5
-            </button>
-            <button
-              type="button"
-              onClick={() => setLlmEngineType("SLLM")}
-              className={`text-xs py-2 font-semibold rounded-lg transition-all flex items-center justify-center gap-1 ${llmEngineType === "SLLM"
-                ? "bg-slate-800 text-white shadow-sm"
-                : "text-slate-600 hover:bg-slate-50"
-                }`}
-            >
-              고속 sLLM
-            </button>
-          </div>
-          <p className="text-[10px] text-slate-400 mt-2.5 leading-relaxed">
-            {llmEngineType === "GEMINI"
-              ? "Google Studio API를 실시간 튜닝하여 전문적인 마크다운 감정평가서를 출력합니다."
-              : "사내 초고속 연대 분석 sLLM 모델을 구동하여 지연 현상을 최소화합니다."}
-          </p>
-        </div>
 
         {/* Recent Search Address History */}
         <div className="flex-1 flex flex-col min-h-0">
@@ -763,21 +724,7 @@ export default function App() {
           </div>
 
           <div className="flex items-center gap-2">
-            {/* Mobile engine toggler (responsive fallback) */}
-            <div className="md:hidden flex items-center gap-0.5 bg-slate-100 p-1 rounded-xl border border-slate-200">
-              <button
-                onClick={() => setLlmEngineType("GEMINI")}
-                className={`text-[10px] px-2.5 py-1 font-bold rounded-lg ${llmEngineType === "GEMINI" ? "bg-violet-600 text-white shadow-sm" : "text-slate-600"}`}
-              >
-                Gemini
-              </button>
-              <button
-                onClick={() => setLlmEngineType("SLLM")}
-                className={`text-[10px] px-2.5 py-1 font-bold rounded-lg ${llmEngineType === "SLLM" ? "bg-slate-800 text-white shadow-sm" : "text-slate-600"}`}
-              >
-                sLLM
-              </button>
-            </div>
+
 
             <div className="flex items-center gap-1.5 bg-slate-50 px-3 py-1.5 rounded-full border border-slate-200">
               <span className="w-2 h-2 rounded-full bg-emerald-500" />
@@ -1242,7 +1189,7 @@ export default function App() {
                         <div className="flex-1 bg-white border border-slate-200/80 p-6 rounded-3xl shadow-sm space-y-4 max-w-[85%]">
                           <div className="flex items-center gap-2 text-xs font-bold text-violet-600">
                             <Sparkles size={14} className="animate-spin text-violet-600" />
-                            <span>{llmEngineType === "GEMINI" ? "Gemini가 감정평가 마크다운 리포트를 작성하고 있습니다..." : "sLLM이 고속 대조 보고서를 연산하고 있습니다..."}</span>
+                            <span>Gemini가 감정평가 마크다운 리포트를 작성하고 있습니다...</span>
                           </div>
                           <div className="space-y-2.5 animate-pulse pt-2">
                             <div className="h-4 bg-slate-200/80 rounded w-1/4" />
@@ -1272,7 +1219,7 @@ export default function App() {
                             AI OFFICIAL APPRAISAL REPORT
                           </span>
                           <span className="text-[9px] text-violet-600 font-bold bg-violet-50 px-2 py-0.5 rounded border border-violet-100">
-                            {llmEngineType === "GEMINI" ? "Gemini 3.5 Core" : "sLLM v1.2"}
+                            Gemini 3.5 Core
                           </span>
                         </div>
 
