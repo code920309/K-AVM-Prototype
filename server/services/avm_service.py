@@ -53,7 +53,7 @@ async def get_spec_by_address(raw_address: str):
             
     # Resilient dynamic generator fallback
     bld_type = "VSA"
-    if any(keyword in trimmed for keyword in ["아파트", "자이", "푸르지오", "래미안", "아이파크", "더샵"]):
+    if any(keyword in trimmed for keyword in ["아파트", "자이", "푸르지오", "래미안", "아이파크", "더샵", "단독", "다가구", "전원주택"]):
         bld_type = "SFA"
     elif any(keyword in trimmed for keyword in ["빌딩", "타워", "상가", "대로"]):
         bld_type = "SCA"

@@ -883,9 +883,9 @@ export default function App() {
                     VSA: "bg-emerald-50 text-emerald-600 border-emerald-200/60"
                   };
                   const tagNames: Record<BldType, string> = {
-                    SCA: "상업용 다세대 빌딩 (SCA)",
-                    SFA: "아파트 및 대단지 주택 (SFA)",
-                    VSA: "연립주택 및 빌라단지 (VSA)"
+                    SCA: "상가집합부 및 집합상가 (SCA)",
+                    SFA: "단독주택 및 다가구주택 (SFA)",
+                    VSA: "연립주택 및 빌라/다세대단지 (VSA)"
                   };
 
                   return (

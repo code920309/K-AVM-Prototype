@@ -179,9 +179,9 @@ async def get_building_official_data(sigungu_cd: str, bjdong_cd: str, bun: str, 
                 std_address = f"{plat_plc} {bld_nm}".strip()
                 
                 # AVM 건물 유형(bld_type) 매핑
-                # VSA (연립빌라/기타), SFA (아파트/공동), SCA (상업용)
+                # SFA (단독/다가구/아파트/공동), SCA (상업용/근린생활), VSA (연립/다세대/기타)
                 bld_type = "VSA"
-                if "아파트" in main_purps_cd_nm or "공동주택" in main_purps_cd_nm:
+                if any(keyword in main_purps_cd_nm for keyword in ["단독", "다가구", "아파트", "공동주택"]):
                     bld_type = "SFA"
                 elif any(keyword in main_purps_cd_nm for keyword in ["근린생활", "상업", "업무", "판매", "상가"]):
                     bld_type = "SCA"
